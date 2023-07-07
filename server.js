@@ -5,6 +5,7 @@ const logger = require('morgan');
 // Always require and configure near the top 
 require('dotenv').config();
 require('./config/database');
+require('@mateoaranda/jikanjs')
 
 // Require the Mongoose models
 // const User = require('./models/user');

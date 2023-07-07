@@ -9,9 +9,19 @@ import AuthPage from '../AuthPage/AuthPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import Navbar from '../../components/Navbar/Navbar';
 
+
 export default function App() {
   
+  const jikanjs = require('@mateoaranda/jikanjs');
+  
   const [user, setUser] = useState(getUser());
+
+  async function anime() {
+    const response = await jikanjs.loadAnime(31240);
+    console.log(response.data.title)
+  }
+
+  anime();
 
   return (
     <main className="App">
