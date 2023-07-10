@@ -8,21 +8,22 @@ import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import AuthPage from '../AuthPage/AuthPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import Navbar from '../../components/Navbar/Navbar';
-import Jikan from 'jikan4.js'
-
+import Jikan from 'jikan4.js' 
 
 export default function App() {
   const [user, setUser] = useState(getUser());
 
-  // const client = new Jikan.Client()
+  const client = new Jikan.Client()
 
-  // async function printAnime (id) {
-  //   const anime = await client.anime.get(id)
+  async function printAnime (id) {
+    const anime = await client.anime.get(id)
+    console.log(anime)
   
-  //   console.log(`${anime.title} (#${anime.id})`)
-  // }
+    console.log(`${anime.title} (#${anime.id})`)
+    console.log(anime.image)
+  }
 
-  // printAnime(4);
+  printAnime(5);
 
   return (
     <main className="App">
