@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const ensureLoggedIn = require('../../config/ensureLoggedIn');
+const ensureLoggedIn = require('../../server-config/ensureLoggedIn');
 const usersCtrl = require('../../controllers/api/users');
 
 // POST /api/users

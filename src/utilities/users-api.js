@@ -1,6 +1,5 @@
 import sendRequest from './send-request';
 const BASE_URL = '/api/users';
-const login_URL = '/api/users/login';
 
 export function signUp(userData) {
   return sendRequest(BASE_URL, 'POST', userData);
