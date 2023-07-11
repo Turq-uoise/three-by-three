@@ -1,10 +1,30 @@
 .App {
-  text-align: center;
+  overflow: hidden
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ImageBox {
+  background-color: aquamarine;
+  border-style: solid;
+  margin: 1vw;
+  border-radius: 5px;
+  border-width: 0.5px;
+  border-color: rgba(150, 150, 150, 0.5);
+  text-align: center;
+  position: relative;
+  width: 20%;
+  height: 0;
+  padding-bottom: 20%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.imageBox {
+  border: 1px solid grey;
+}
+
+.imageRow {
+  height: 20vmin,
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,20 +33,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {

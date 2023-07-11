@@ -4,37 +4,35 @@ import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom'
 import { getUser } from '../../utilities/users-service';
 
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+import HomePage from '../HomePage/HomePage';
 import AuthPage from '../AuthPage/AuthPage';
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
+import CreatePage from '../CreatePage/CreatePage';
 import Navbar from '../../components/Navbar/Navbar';
 import Jikan from 'jikan4.js' 
 
 export default function App() {
   const [user, setUser] = useState(getUser());
 
-  const client = new Jikan.Client()
-
-  async function printAnime (id) {
-    const anime = await client.anime.get(id)
-    console.log(anime)
-  
-    console.log(`${anime.title} (#${anime.id})`)
-    console.log(anime.image)
-  }
-
-  printAnime(5);
-
   return (
     <main className="App">
       { user ?
-        <>
-          <Navbar user={user.name} setUser={setUser}/>
-          <Routes>
-            <Route path="/orders/new" element={<NewOrderPage />} />
-            <Route path="/orders" element={<OrderHistoryPage />} />
-          </Routes>
-        </>
+        <Container fluid>
+          <Row>
+            <Col>
+              <Navbar user={user.name} setUser={setUser}/>
+            </Col>
+            <Col md={10}>
+              <Routes>
+                <Route path="/create" element={<CreatePage />} />
+                <Route path="/home" element={<HomePage />} />
+              </Routes>
+            </Col>
+          </Row>
+        </Container>
         :
         <AuthPage setUser={setUser}/>
       }
