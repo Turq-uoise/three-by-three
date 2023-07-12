@@ -3,30 +3,28 @@ import { useEffect, useState } from 'react';
 
 import Anime from './Anime';
 
-export default function AnimeQuery({query}) {
+export default function AnimeQuery({query, selectedAnime, setSelectedAnime, anime, setAnime}) {
 
   const client = new Jikan.Client()
   const [searchResult, setSearchResult] = useState(['No Results']);
-  console.log("animequery: " + query)
 
   useEffect(function() {
-    console.log("animequery: " + query)
     async function search(searchString) {
-      let result = (await client.anime.search(searchString, null, null, 5)).map((anime) => {
-        return anime.title.default;
+      const result = (await client.anime.search(searchString, null, null, 5)).map((anime) => {
+        return { 
+          title: anime.title.default,
+          image: anime.image.jpg.large.href
+        }
       });
-
-      // if (result.length > 5) result = result.slice(0,5);
       setSearchResult(result);
     }
     if (query) search(query)
   }, [query])
-
-
+  
   return (
     <div className="AnimeQuery">
-      {searchResult.map((title) => (
-        <Anime title={title} />
+      {searchResult.map((anime, idx) => (
+        <Anime title={anime.title} image={anime.image} selectedAnime={selectedAnime} setSelectedAnime={setSelectedAnime} idx={idx}/>
       ))}
       <br />
       ...
