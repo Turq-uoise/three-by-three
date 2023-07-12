@@ -7,17 +7,20 @@ export default function AnimeQuery({query}) {
 
   const client = new Jikan.Client()
   const [searchResult, setSearchResult] = useState(['No Results']);
-  console.log("anime: " + query)
+  console.log("animequery: " + query)
 
   useEffect(function() {
+    console.log("animequery: " + query)
     async function search(searchString) {
-      const result = (await client.anime.search(searchString)).map((anime) => {
+      let result = (await client.anime.search(searchString, null, null, 5)).map((anime) => {
         return anime.title.default;
       });
-      setSearchResult(result.slice(0, 5));
+
+      // if (result.length > 5) result = result.slice(0,5);
+      setSearchResult(result);
     }
-    search(query)
-  })
+    if (query) search(query)
+  }, [query])
 
 
   return (

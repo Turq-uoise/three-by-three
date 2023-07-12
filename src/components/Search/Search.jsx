@@ -3,14 +3,14 @@ import Container from "react-bootstrap/Container";
 
 import AnimeQuery from "../AnimeQuery/AnimeQuery"
 
-export default function Search({}) {
+export default function Search() {
   const [animeSearch, setAnimeSearch] = useState("");
-  let query;
+  const [query, setQuery] = useState();
 
   function handleSearch(evt) {
     evt.preventDefault();
-    query = animeSearch;
-    console.log(query)
+    setQuery(animeSearch);
+    console.log("search query: " + query)
   }
 
   return (

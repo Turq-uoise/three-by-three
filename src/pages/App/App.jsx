@@ -12,7 +12,6 @@ import HomePage from '../HomePage/HomePage';
 import AuthPage from '../AuthPage/AuthPage';
 import CreatePage from '../CreatePage/CreatePage';
 import Navbar from '../../components/Navbar/Navbar';
-import Jikan from 'jikan4.js' 
 
 export default function App() {
   const [user, setUser] = useState(getUser());

@@ -12,26 +12,27 @@ export default function CreatePage() {
     <h1 className="CreatePage">
       CreatePage
     </h1>
-    <Container>
+    <Container className="imageContainer">
       <Row>
         <Col md={9}>
           <Row className="imageRow"> 
-            <Col className='imageBox'><ImageBox /></Col>
-            <Col className='imageBox'><ImageBox /></Col>
-            <Col className='imageBox'><ImageBox /></Col>
+            <ImageBox />
+            <ImageBox />
+            <ImageBox />
           </Row>
           <Row className="imageRow">
-            <Col className='imageBox'><ImageBox /></Col>
-            <Col className='imageBox'><ImageBox /></Col>
-            <Col className='imageBox'><ImageBox /></Col>
+            <ImageBox />
+            <ImageBox />
+            <ImageBox />
           </Row>
           <Row className="imageRow">
-            <Col className='imageBox'><ImageBox /></Col>
-            <Col className='imageBox'><ImageBox /></Col>
-            <Col className='imageBox'><ImageBox /></Col>
+            <ImageBox />
+            <ImageBox />
+            <ImageBox />
           </Row>
         </Col>
         <Col>
+        <br />
          <Search />
         </Col>
       </Row>
