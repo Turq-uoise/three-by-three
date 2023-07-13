@@ -10,7 +10,6 @@ export default function Search({selectedAnime, setSelectedAnime, anime, setAnime
   function handleSearch(evt) {
     evt.preventDefault();
     setQuery(animeSearch);
-    console.log("search query: " + query)
   }
 
   return (

@@ -16,7 +16,7 @@ export default function ImageBox({anime, setAnime, selectedAnime, idx}) {
 
   return (
     <div 
-      className={`ImageBox ${anime[idx]}`}     
+      className="ImageBox"     
       style={{
         backgroundImage: `url(${image})`,
         padding: 50,
