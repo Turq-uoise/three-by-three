@@ -5,17 +5,6 @@ const logger = require('morgan');
 // Always require and configure near the top 
 require('dotenv').config();
 require('./server-config/database');
-require('@mateoaranda/jikanjs')
-
-// Require the Mongoose models
-// const User = require('./models/user');
-// const Item = require('./models/item');
-// const Category = require('./models/category');
-// const Order = require('./models/order');
-
-// Local variables will come in handy for holding retrieved documents
-let user, item, category, order;
-let users, items, categories, orders;
 
 const app = express();
 
@@ -30,6 +19,8 @@ app.use(require('./server-config/checkToken'));
 
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
+const ensureLoggedIn = require('./server-config/ensureLoggedIn');
+app.use('/api/threebythrees', ensureLoggedIn, require('./routes/api/threebythrees'));
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests

@@ -15,6 +15,7 @@ import Navbar from '../../components/Navbar/Navbar';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
+  const [showTitle, setShowTitle] = useState()
 
   return (
     <main className="App">
@@ -26,8 +27,8 @@ export default function App() {
             </Col>
             <Col md={10}>
               <Routes>
-                <Route path="/create" element={<CreatePage />} />
-                <Route path="/home" element={<HomePage />} />
+                <Route path="/create" element={<CreatePage showTitle={showTitle} setShowTitle={setShowTitle}/>} />
+                <Route path="/" element={<HomePage showTitle={showTitle} setShowTitle={setShowTitle}/>} />
               </Routes>
             </Col>
           </Row>

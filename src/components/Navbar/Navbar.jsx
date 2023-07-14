@@ -16,7 +16,7 @@ export default function Navbar({setUser, user}) {
   return (
     <Container style={{backgroundColor: "lime"}}>
       <Row>
-        <Link to="/home">Home</Link>
+        <Link to="/">Home</Link>
       </Row>
       <Row>
         <Link to="/create">Create a 3x3</Link>
