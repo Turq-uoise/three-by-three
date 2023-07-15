@@ -18,6 +18,7 @@ module.exports = function(req, res, next) {
   } else {
     // No token was sent
     req.user = null;
+    console.log("failed")
     return next();
   }
 };

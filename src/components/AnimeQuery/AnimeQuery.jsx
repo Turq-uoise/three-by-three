@@ -14,7 +14,7 @@ export default function AnimeQuery({query, selectedAnime, setSelectedAnime, anim
         return { 
           title: anime.title.default,
           image: anime.image.jpg.large.href
-        }
+        } 
       });
       setSearchResult(result);
     }
@@ -27,7 +27,6 @@ export default function AnimeQuery({query, selectedAnime, setSelectedAnime, anim
         <Anime title={anime.title} image={anime.image} selectedAnime={selectedAnime} setSelectedAnime={setSelectedAnime} idx={idx}/>
       ))}
       <br />
-      ...
     </div>
   );
 }

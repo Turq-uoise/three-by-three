@@ -1,10 +1,7 @@
-import { useState } from "react";
-
-export default function ImageBox({anime, setAnime, selectedAnime, idx}) {
-  const [showTitle, setShowTitle] = useState()
-  
+export default function ImageBox({anime, setAnime, selectedAnime, idx, showTitle, clickEnabled}) {
   let image;
   let title;
+  if (clickEnabled===undefined) clickEnabled=true;
 
   if (!anime[idx]) { 
     image ="https://cdn.discordapp.com/attachments/310454121746661377/1128802251218108446/image.png" // default
@@ -24,9 +21,9 @@ export default function ImageBox({anime, setAnime, selectedAnime, idx}) {
         height: "25vmin",
         border: "1px thick black",
       }}
-      onClick={() => setAnime({...anime, [idx]: selectedAnime})}
+      onClick={clickEnabled ? () => setAnime({ ...anime, [idx]: selectedAnime }) : undefined}
     >
-      <span className="animeTitle">{title}</span>
+      {showTitle ? <span className="animeTitle">{title}</span> : ''}
     </div>
   );
 }

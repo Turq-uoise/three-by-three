@@ -17,7 +17,7 @@ export default function Navbar({setUser, user}) {
   return (
     <Container className="NavBar">
       <Row>
-        <Link to="/home">Home</Link>
+        <Link to="/">Home</Link>
       </Row>
       <Row>
         <Link to="/create">Create a 3x3</Link>
