@@ -19,7 +19,7 @@ export default function App() {
   return (
     <main className="App">
       { user ?
-        <Container fluid>
+        <Container>
           <Row>
             <Col>
               <Navbar user={user.name} setUser={setUser}/>

@@ -3,6 +3,7 @@ import * as userService from '../../utilities/users-service';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export default function Navbar({setUser, user}) {
 
@@ -14,21 +15,16 @@ export default function Navbar({setUser, user}) {
   }
 
   return (
-    <Container style={{backgroundColor: "lime"}}>
+    <Container className="NavBar">
       <Row>
         <Link to="/home">Home</Link>
       </Row>
       <Row>
         <Link to="/create">Create a 3x3</Link>
       </Row>
-      <Row>
-      </Row>
-      <Row style={{position: "absolute", bottom: 0}}>
-        <span style={{position: "relative", bottom: 20}}>
-          {user} 
-          <br />
-          <Link to="" onClick={handleLogOut}>Log Out</Link>
-        </span>
+      <Row className="user">
+        <Col>{user}</Col>
+        <Col><Link to="" onClick={handleLogOut}>Log Out</Link></Col>
       </Row>
     </Container>
   );

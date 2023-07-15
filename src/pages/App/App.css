@@ -1,5 +1,17 @@
 .App {
-  overflow: hidden
+  overflow: hidden;
+  height: 90vmin;
+}
+
+.NavBar {
+  background-color: lime;
+  display: flex;
+  flex-direction: column;
+  height: 90vmin;
+}
+
+.user {
+  align-items: flex-end;
 }
 
 .ImageBox {
@@ -20,6 +32,11 @@
   cursor: pointer;
 }
 
+.HomePage {
+  height: 90vmin;
+  overflow: scroll;
+}
+
 .animeTitle {
   background-color: rgba(0, 0, 0, 0.5);
   padding-left: 25%;
@@ -31,7 +48,6 @@
 }
 
 .imageContainer {
-  width: 5vmin;
   background-color: goldenrod;
 }
 
