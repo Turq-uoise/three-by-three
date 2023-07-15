@@ -22,7 +22,7 @@ export default function App() {
       { user ?
         <Container>
           <Row>
-            <Col>
+            <Col style={{paddingTop: "5.5vmin"}}>
               <Navbar user={user.name} setUser={setUser}/>
             </Col>
             <Col md={10}>

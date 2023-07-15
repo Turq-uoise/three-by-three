@@ -16,16 +16,15 @@ export default function Navbar({setUser, user}) {
 
   return (
     <Container className="NavBar">
+      <Row style={{paddingLeft: 10, fontWeight: "bold"}}>{user}</Row>
       <Row>
-        <Link to="/">Home</Link>
+        <Link to="/" style={{textDecoration:"none", fontWeight:"bolder"}}>Home</Link>
       </Row>
       <Row>
-        <Link to="/create">Create a 3x3</Link>
+        <Link to="/create" style={{textDecoration:"none", fontWeight:"bolder"}}>Create a 3x3</Link>
       </Row>
-      <Row className="user">
-        <Col>{user}</Col>
-        <Col><Link to="" onClick={handleLogOut}>Log Out</Link></Col>
-      </Row>
+      <Row><Link to="" onClick={handleLogOut} style={{textDecoration:"none", fontWeight:"bolder"}}>Log Out</Link></Row>
+      
     </Container>
   );
 }

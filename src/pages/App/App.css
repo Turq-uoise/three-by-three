@@ -4,14 +4,9 @@
 }
 
 .NavBar {
-  background-color: lime;
   display: flex;
   flex-direction: column;
-  height: 90vmin;
-}
-
-.user {
-  align-items: flex-end;
+  font-size: x-large;
 }
 
 .ImageBox {
@@ -34,7 +29,24 @@
 
 .HomePage {
   height: 90vmin;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: aquamarine;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(79, 158, 132);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(60, 119, 100);
 }
 
 .animeTitle {
@@ -48,7 +60,13 @@
 }
 
 .imageContainer {
-  background-color: goldenrod;
+  background-color: rgb(79, 158, 132);
+  border: 3px double black;
+}
+
+.d-grid {
+  margin-left: -1vmin;
+  width: 75vmin;
 }
 
 .imageBox {

@@ -4,7 +4,7 @@ export default function Anime({title, selectedAnime, setSelectedAnime, image}) {
   if (!title) return;
   
   return (
-    <h6 className="Anime">
+    <h5 className="Anime">
       <Badge 
         bg={`${selectedAnime.title === title ? 'primary' : 'secondary'}`}
         onClick={() => setSelectedAnime({title, image})}
@@ -12,6 +12,6 @@ export default function Anime({title, selectedAnime, setSelectedAnime, image}) {
       >
         {title.slice(0, 25)}
       </Badge>
-    </h6>
+    </h5>
   );
 } 

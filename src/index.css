@@ -4,7 +4,7 @@
   --tan-2: #E7E2DD;
   --tan-3: #E2D9D1;
   --tan-4: #D3C1AE;
-  --orange: #F67F00;
+  --orange: #9b5b31;
   --text-light: #968c84;
   --text-dark: #615954;
 }
@@ -20,7 +20,6 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
   padding: 2vmin;
   height: 100vh;
 }
@@ -132,6 +131,7 @@ button, a.button {
 }
 
 button.btn-sm {
+  
   font-size: 1.5vmin;
   padding: .6vmin .8vmin;
 }
@@ -148,5 +148,4 @@ button:disabled, form:invalid button[type="submit"] {
 
 button[type="submit"] {
   grid-column: span 2;
-  margin: 1vmin 0 0;
 }

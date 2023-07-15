@@ -44,15 +44,15 @@ export default function CreatePage({showTitle, setShowTitle}) {
             <ImageBox anime={anime} selectedAnime={selectedAnime} setAnime={setAnime}  showTitle={showTitle}idx="8" />
             <ImageBox anime={anime} selectedAnime={selectedAnime} setAnime={setAnime}  showTitle={showTitle}idx="9" />
           </Row>
-          <div className="d-grid gap-2">
+          <Row className="d-grid gap-2">
             <Button size="md" variant="success" onClick={sendThreeByThree} disabled={Object.keys(anime).length < 9}>SAVE</Button>
             <Button variant="secondary" size="md" onClick={() => setAnime([])}>RESET</Button>
-          </div>
+          </Row>
         </Col>
-        <Col>
+        <Col md={2}>
         <br />
          <Search selectedAnime={selectedAnime} setSelectedAnime={setSelectedAnime} anime={anime} setAnime={setAnime}/>
-         <Button size="md" variant="info" onClick={() => setShowTitle(!showTitle)}>SHOW TITLE</Button>
+         <button className='btn-sm' style={{marginLeft: "5px"}} onClick={() => setShowTitle(!showTitle)}>SHOW TITLE</button>
         </Col>
       </Row>
     </Container>

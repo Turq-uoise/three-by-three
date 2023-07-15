@@ -22,11 +22,11 @@ export default function Search({selectedAnime, setSelectedAnime, anime, setAnime
           required
           pattern=".{4,}"
         />
-        <button type="submit">SEARCH</button>
+        <button className='' type="submit">SEARCH</button>
       </form>
       <hr />
-      Search Results:
-      <Container>
+      <h4>Results:</h4>
+      <Container style={{paddingTop: "1vmin"}}>
         <AnimeQuery query={query} selectedAnime={selectedAnime} setSelectedAnime={setSelectedAnime} anime={anime} setAnime={setAnime}/>
       </Container>
     </div>

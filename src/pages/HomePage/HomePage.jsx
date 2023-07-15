@@ -15,9 +15,9 @@ export default function HomePage({showTitle, setShowTitle}) {
   }, [])
 
   return (
-    <Container className="HomePage">
+    <Container>
       <Row>
-        <Col md={9}>
+        <Col md={9} className="HomePage">
           <h1>HomePage</h1>
           {threeByThrees.map(({items, user}) => (
             <ThreeByThree items={items} user={user} showTitle={showTitle}/>
