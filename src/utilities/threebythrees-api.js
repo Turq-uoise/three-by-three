@@ -5,6 +5,10 @@ export function create(payload) {
   return sendRequest(`${BASE_URL}/create`, 'POST', payload);
 }
 
+export function rate(payload) {
+  return sendRequest(`${BASE_URL}/rate`, 'POST', payload);
+}
+
 export function getAll() {
   return sendRequest(BASE_URL);
 }

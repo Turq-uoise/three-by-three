@@ -1,10 +1,30 @@
 import { Container, Row } from "react-bootstrap";
 import ImageBox from "../ImageBox/ImageBox";
+import StarRating from "../StarRating/StarRating";
+import { useEffect, useState } from "react";
 
-export default function ThreeByThree({items, user, showTitle}) {
+export default function ThreeByThree({items, user, showTitle, id, rating}) {
+  const [average, setAverage] = useState(0.0)
+
+  useEffect(() => {
+    function calcAvg() {
+      let totalRating = 0;
+
+      rating.forEach((ratingItem) => {
+        totalRating += ratingItem.rating;
+      });
+
+      setAverage((totalRating / rating.length).toFixed(1));
+    }
+
+    calcAvg();
+  }, [rating]);
+
+  
   return (
     <Container className="ThreeByThree">
-      <h4>3x3 by {user.name}</h4>
+      <h4>"{items[9].title}" by {user.name}</h4>
+      <div className="Rating"><StarRating id={id} user={user}/> <span className="average">{average} <span className="on">&#9733;</span></span></div>
       <Row className="imageRow"> 
         <ImageBox anime={items} clickEnabled={false} showTitle={showTitle} idx="0" />
         <ImageBox anime={items} clickEnabled={false} showTitle={showTitle} idx="1" />

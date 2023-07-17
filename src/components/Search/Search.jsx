@@ -22,7 +22,7 @@ export default function Search({selectedAnime, setSelectedAnime}) {
           required
           pattern=".{4,}"
         />
-        <button className='' type="submit">SEARCH</button>
+        <button className='Search' type="submit">SEARCH</button>
       </form>
       <hr />
       <h4>Results:</h4>

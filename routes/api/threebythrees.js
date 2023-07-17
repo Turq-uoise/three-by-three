@@ -5,7 +5,8 @@ const threebythreesCtrl = require('../../controllers/api/threebythrees');
 
 // POST /api/threebythrees
 router.get('/', threebythreesCtrl.index);
-router.post('/create', threebythreesCtrl.create);
+router.post('/create', ensureLoggedIn,threebythreesCtrl.create);
+router.post('/rate',threebythreesCtrl.rate)
 router.get('/:id', threebythreesCtrl.show);
 
 module.exports = router;

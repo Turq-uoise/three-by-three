@@ -88,6 +88,34 @@
   color: white;
 }
 
+.Rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.average {
+  font-size: 2vmin;
+  font-weight: bolder;
+  padding-right: 5vmin;
+}
+
+.starRating>button {
+  background-color: transparent;
+  font-size: larger;
+  padding: 0.3vmin;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.on {
+  color: gold;
+}
+.off {
+  color: #ccc;
+}
+
 @media only screen and (max-width: 400px) {
   /* .d-grid {
     width: 70vmin

@@ -3,6 +3,7 @@ const ThreeByThree = require('../../models/threebythree');
 module.exports = {
   index,
   create,
+  rate,
   show
 };
 
@@ -19,6 +20,29 @@ async function create(req, res) {
   } catch (err) {
     res.status(400).json(err);
   }
+}
+
+async function rate(req, res) {
+  const threebythree = await ThreeByThree.findById(req.body.id)
+  const rate = {
+    rating: req.body.rating,
+    user: req.user._id
+  }
+
+  let alreadyRated = false;
+
+  threebythree.rating.forEach((threebythreerating) => {
+    if (threebythreerating.user === rate.user) {
+      alreadyRated = true
+      threebythreerating.rating = rate.rating
+    }
+  })
+
+  if (!alreadyRated) {
+    threebythree.rating.push(rate)
+  }
+
+  return threebythree.save()
 }
 
 async function show(req, res) {
