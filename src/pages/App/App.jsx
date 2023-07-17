@@ -20,12 +20,12 @@ export default function App() {
   return (
     <main className="App">
       { user ?
-        <Container>
+        <Container fluid="md">
           <Row>
             <Col style={{paddingTop: "5.5vmin"}}>
               <Navbar user={user.name} setUser={setUser}/>
             </Col>
-            <Col md={10}>
+            <Col xs={10}>
               <Routes>
                 <Route path="/create" element={<CreatePage showTitle={showTitle} setShowTitle={setShowTitle}/>} />
                 <Route path="/" element={<HomePage showTitle={showTitle} setShowTitle={setShowTitle}/>} />

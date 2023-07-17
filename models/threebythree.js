@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const threebythreeSchema = new Schema({
+  name: {type: String, required: true},
   items: [{
     title: String, 
     image: String

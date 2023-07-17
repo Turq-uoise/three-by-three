@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 
 import AnimeQuery from "../AnimeQuery/AnimeQuery"
 
-export default function Search({selectedAnime, setSelectedAnime, anime, setAnime}) {
+export default function Search({selectedAnime, setSelectedAnime}) {
   const [animeSearch, setAnimeSearch] = useState("");
   const [query, setQuery] = useState();
 
@@ -27,7 +27,7 @@ export default function Search({selectedAnime, setSelectedAnime, anime, setAnime
       <hr />
       <h4>Results:</h4>
       <Container style={{paddingTop: "1vmin"}}>
-        <AnimeQuery query={query} selectedAnime={selectedAnime} setSelectedAnime={setSelectedAnime} anime={anime} setAnime={setAnime}/>
+        <AnimeQuery query={query} selectedAnime={selectedAnime} setSelectedAnime={setSelectedAnime}/>
       </Container>
     </div>
   );

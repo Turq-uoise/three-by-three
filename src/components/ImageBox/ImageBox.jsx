@@ -16,10 +16,8 @@ export default function ImageBox({anime, setAnime, selectedAnime, idx, showTitle
       className="ImageBox"     
       style={{
         backgroundImage: `url(${image})`,
-        padding: 50,
-        width: "25vmin",
+        width: "31.5%",
         height: "25vmin",
-        border: "1px thick black",
       }}
       onClick={clickEnabled ? () => setAnime({ ...anime, [idx]: selectedAnime }) : undefined}
     >

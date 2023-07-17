@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import Anime from './Anime';
 
-export default function AnimeQuery({query, selectedAnime, setSelectedAnime, anime, setAnime}) {
+export default function AnimeQuery({query, selectedAnime, setSelectedAnime}) {
 
   const client = new Jikan.Client()
   const [searchResult, setSearchResult] = useState(['No Results']);

@@ -3,7 +3,7 @@ import ThreeByThree from "../../components/ThreeByThree/ThreeByThree";
 import * as threeByThreesAPI from "../../utilities/threebythrees-api"
 import { Container, Row, Col, Button } from "react-bootstrap";
 
-export default function HomePage({showTitle, setShowTitle}) {
+export default function UserPage({showTitle, setShowTitle}) {
   const [threeByThrees, setThreeByThrees] = useState([])
 
   useEffect(function() {
@@ -17,8 +17,8 @@ export default function HomePage({showTitle, setShowTitle}) {
   return (
     <Container>
       <Row>
-        <Col md={9} className="HomePage">
-          <h1>Home</h1>
+        <Col md={9} className="UserPage">
+          <h1>User</h1>
           {threeByThrees.map(({items, user}) => (
             <ThreeByThree items={items} user={user} showTitle={showTitle}/>
           ))}
