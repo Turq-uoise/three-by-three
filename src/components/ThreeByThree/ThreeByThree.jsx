@@ -11,7 +11,7 @@ export default function ThreeByThree({items, user, showTitle, id, rating}) {
       let totalRating = 0;
 
       rating.forEach((ratingItem) => {
-        totalRating += ratingItem.rating;
+        totalRating += parseFloat(ratingItem.rating);
       });
 
       setAverage((totalRating / rating.length).toFixed(1));
