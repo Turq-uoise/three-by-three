@@ -7,7 +7,7 @@ For my final GA project, I created a website that I have had the idea to make si
 
 ## Deployment link
 
-[https://42101-3000.2.codesphere.com/](https://three-by-three-e866e181d04b.herokuapp.com/)
+[https://three-by-three.herokuapp.com/](https://three-by-three-e866e181d04b.herokuapp.com/)
 
 Install the code, then run “npm run build” in the terminal in VS Code (or your editor of choice) to create a build folder, and then run “node server” and navigate to localhost:3000.
 
